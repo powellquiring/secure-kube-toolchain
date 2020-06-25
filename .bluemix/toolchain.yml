@@ -43,8 +43,9 @@ services:
       legal: true
       kind: ['app']
   pipeline-repo:
-    service_id: >
-      $env.pipeline_type === 'tekton' ? 'githubconsolidated' : '' 
+    service_id: githubpublic
+    #service_id: >
+    #  $env.pipeline_type === 'tekton' ? 'githubconsolidated' : '' 
     parameters:
       repo_url: $env.repository
       source_repo_url: "https://github.com/proc-org/secure-kube-toolchain"  
