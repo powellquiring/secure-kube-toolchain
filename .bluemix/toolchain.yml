@@ -21,7 +21,9 @@ template:
         "(" + $env.repository +
           "/tree/" + $env.branch + ")"
 toolchain:
-  name: "kube-toolchain-{{timestamp}}"
+  #name: "kube-toolchain-{{timestamp}}"
+  name: >
+    $env.source_provider ? $env.source_provider : 'hostedgit'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
